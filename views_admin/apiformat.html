@@ -1,0 +1,33 @@
+//EXTRAER UN UNICO ELEMENTO
+fetch("URL" , {
+    method:"GET",
+    headers: {
+        Accept: "application/json", 
+        "Content-Type": "application/json"
+    }
+}).then((resp) => resp.json())
+.then((datos) => {                
+    
+    document.getElementById("producto").innerHTML = product.cualquierElementoDelArray; //Dato simple 
+    document.getElementById("producto").innerHTML += "<tagHtml>"+ product.cualquierElementoDelArray +"</tagHtml>"; //Dato formateado con HTML
+
+
+})
+
+//EXTRAER UN MULTIPLES ELEMENTO
+fetch("URL" , {
+    method:"GET",
+    headers: {
+        Accept: "application/json", 
+        "Content-Type": "application/json"
+    }
+}).then((resp) => resp.json())
+.then((datos) => {                
+    
+    let prod =  datos.map(function(product){
+        document.getElementById("producto").innerHTML += product.cualquierElementoDelArray; //Dato simple 
+        document.getElementById("producto").innerHTML += "<tagHtml>"+ product.cualquierElementoDelArray +"</tagHtml>"; //Dato formateado con HTML
+
+    })
+
+})

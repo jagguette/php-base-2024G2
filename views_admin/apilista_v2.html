@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="noticias">
+        <div id="noticia1">
+            <h1>Programando Javascript</h1>
+            <p id="descripcion">Programar en javascript es facil, pero a la vez dificil sino se sabe</p>
+        </div>
+        <div id="noticia2">
+            
+        </div>
+        <input type="text" name="txtComentario" id="txtComentario">
+    </div>
+    <h1>Producto</h1>
+    <div id="productos">
+
+    </div>
+
+    
+
+    <script>
+        document.getElementById("noticia2").innerHTML = "Desarrollando en HTML";
+        document.getElementById("txtComentario").value = "Nombre";
+        document.getElementById("descripcion").innerHTML = "Programas en Python";
+
+                
+        //Varios elementos
+        let prod;
+        fetch("https://fakestoreapi.com/products" , {
+                method:"GET",
+                headers: {
+                    Accept: "application/json", 
+                    "Content-Type": "application/json"
+                }
+            }).then((resp) => resp.json())
+            .then((datos) => {
+                let p = datos.map(function(producto){
+                    prod += producto.title;
+                    prod += "<img width='100%' src='"+producto.image+"' >";
+                }).join()
+                document.getElementById("productos").innerHTML = prod; 
+            })
+            
+
+            
+            
+            
+
+    </script>
+</body>
+</html>

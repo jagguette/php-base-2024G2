@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>Paises</h3>
+    <div id="country">
+
+    </div>
+
+    <script type="text/javascript">
+        
+        fetch("https://restcountries.com/v3.1/name/colombia" , {
+            method:"GET",
+            headers: {
+                Accept: "application/json", 
+                "Content-Type": "application/json"
+            }
+        }).then((resp) => resp.json())
+            .then((datos) => {                
+                pais = "Nombre Oficial : "+ datos[0].name.nativeName.spa.official +"<br>";
+                pais += "Capital : "+ datos[0].capital +"<br>";
+                pais += "Lenguaje : "+ datos[0].languages.spa;
+
+                document.getElementById("country").innerHTML = pais;
+
+        })
+    </script>
+</body>
+</html>

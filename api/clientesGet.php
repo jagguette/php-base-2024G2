@@ -2,6 +2,7 @@
     include "../app/clientes-get-services.php";
     include "../config/config.php";
     
+    //Instancia de la clase del Servicio
     $objAPI = new clientesGetServices();
 
     $method = $_SERVER['REQUEST_METHOD'];

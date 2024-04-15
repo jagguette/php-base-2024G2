@@ -16,7 +16,7 @@ class DBOperations extends DBConfig {
 }
 
 /**
-* IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA   Josue Rodriguez
+* IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA   Josue Rodriguez Lopez
 */
 class clientesCreateController extends DBOperations
 {

@@ -16,7 +16,7 @@ class DBOperations extends DBConfig {
 }
 
 /**
-* IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA
+* IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA Jessica Meza
 */
 class clientesCreateController extends DBOperations
 {

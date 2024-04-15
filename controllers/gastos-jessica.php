@@ -24,7 +24,12 @@ class clientesCreateController extends DBOperations
 	function saveClientes($data){
 		//$hash = password_hash($contra, PASSWORD_DEFAULT);
         $ejecucion = $this->dbOperaciones("
-				INSERT INTO clientes(cedula, nombre, direccion, telefono, whatsapp) 
+				INSERT INTO gastos(fecha, 
+				concepto, 
+				id_cuentaorigen, 
+				id_clientedestino, 
+				id_categoria, 
+				valor) 
                 values(".$data["ced"].", '".$data["nom"]."', '".$data["dir"]."', ".$data["tel"].", ".$data["wat"]." ) ");
 		return $ejecucion;												   		
 	}

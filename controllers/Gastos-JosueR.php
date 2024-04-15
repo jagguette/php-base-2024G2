@@ -21,11 +21,17 @@ class DBOperations extends DBConfig {
 class clientesCreateController extends DBOperations
 {
 	
-	function saveClientes($data){
+	function saveGastos($data){
 		//$hash = password_hash($contra, PASSWORD_DEFAULT);
         $ejecucion = $this->dbOperaciones("
-				INSERT INTO clientes(cedula, nombre, direccion, telefono, whatsapp) 
-                values(".$data["ced"].", '".$data["nom"]."', '".$data["dir"]."', ".$data["tel"].", ".$data["wat"]." ) ");
+				INSERT INTO gastos(
+				 fecha, 
+				 concepto,
+				 id_cuentaorigen,
+				 id_clientedestino,
+				 id_categoria, 
+				 valor) 
+                values(".$data["fecha"].", '".$data["concepto"]."', '".$data["dir"]."', ".$data["tel"].", ".$data["wat"]." ) ");
 		return $ejecucion;												   		
 	}
 	

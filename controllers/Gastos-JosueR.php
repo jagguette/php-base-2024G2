@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once( "../models/models_admin.php");
 
 class DBOperations extends DBConfig {
@@ -23,7 +23,8 @@ class gastosCreateController extends DBOperations
 	
 	function saveGastosController($data){
 		//$hash = password_hash($contra, PASSWORD_DEFAULT);
-        $ejecucion = $this->dbOperaciones("
+        $ejecucion = true;
+		/*$this->dbOperaciones("
 				INSERT INTO gastos(
 				 fecha, 
 				 concepto,
@@ -38,7 +39,7 @@ class gastosCreateController extends DBOperations
 					".$data["idcd"].",
 					".$data["idc"].",
 					".$data["val"]." ) "
-				);
+				);*/
 		return $ejecucion;												   		
 	}
 	

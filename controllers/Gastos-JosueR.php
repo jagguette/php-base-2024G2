@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once( "../models/models_admin.php");
 
 class DBOperations extends DBConfig {
@@ -16,30 +16,16 @@ class DBOperations extends DBConfig {
 }
 
 /**
-* IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA   Josue Rodriguez Lopez
+* IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA
 */
-class gastosCreateController extends DBOperations
+class GastosCreateController extends DBOperations
 {
 	
-	function saveGastosController($data){
+	function saveGastos($data){
 		//$hash = password_hash($contra, PASSWORD_DEFAULT);
-        $ejecucion = true;
-		/*$this->dbOperaciones("
-				INSERT INTO gastos(
-				 fecha, 
-				 concepto,
-				 id_cuentaorigen,
-				 id_clientedestino,
-				 id_categoria, 
-				 valor) 
-                values(
-					'".$data["fch"]."',
-					'".$data["con"]."',
-					".$data["idco"].",
-					".$data["idcd"].",
-					".$data["idc"].",
-					".$data["val"]." ) "
-				);*/
+        $ejecucion = $this->dbOperaciones("
+				INSERT INTO gastos(fecha, concepto, id_cuentaorigen, id_clientedestino, id_categoria, valor ) 
+                values('".$data["fch"]."', '".$data["con"]."', ".$data["idco"].", ".$data["idcd"].", ".$data["idc"].", ".$data["val"]." ) ");
 		return $ejecucion;												   		
 	}
 	

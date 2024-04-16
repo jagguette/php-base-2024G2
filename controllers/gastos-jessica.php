@@ -18,10 +18,10 @@ class DBOperations extends DBConfig {
 /**
 * IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA Jessica Meza
 */
-class clientesCreateController extends DBOperations
+class gastosCreateController extends DBOperations
 {
 	
-	function saveClientes($data){
+	function savegastoscontroller($data){
 		//$hash = password_hash($contra, PASSWORD_DEFAULT);
         $ejecucion = $this->dbOperaciones("
 				INSERT INTO gastos(fecha, 
@@ -30,7 +30,14 @@ class clientesCreateController extends DBOperations
 				id_clientedestino, 
 				id_categoria, 
 				valor) 
-                values(".$data["ced"].", '".$data["nom"]."', '".$data["dir"]."', ".$data["tel"].", ".$data["wat"]." ) ");
+                values(
+					'".$data["fch"]."',
+				    '".$data["con"]."',
+				    ".$data["idco"].",
+				    ".$data["idcd"].",
+				    ".$data["idc"].",
+					".$data["val"]." ) "
+					);
 		return $ejecucion;												   		
 	}
 	

@@ -1,13 +1,13 @@
 <?php 
-    //include "../controllers/Gastos-JosueR.php";
+    include "../controllers/Gastos-JosueR.php";
 
-    class GastosCreteServices{    
+    class gastosCreteServices{    
 
         function saveGastos($datos){
             include "../config/config.php";
             
             if(isset($datos["fch"])){//verificar la existencia de envio de datos
-                //$objDB = new gastosCreateController();
+                $objDB = new gastosCreateController();
 
                 $data = array(
                     "fch"=> $datos["fch"],
@@ -18,7 +18,7 @@
                     "val"=> $datos["val"]
                 );
 
-                $ejecucion = true;//$objDB->saveGastosController($data);
+                $ejecucion = $objDB->saveGastos($data);
                 if($ejecucion){ // Todo se ejecuto correctamente
                     echo json_encode(array("data"=>null, "error"=>"0", "msg"=>$errorResponse[0] ));                    
                 }else{ // Algo paso mal
